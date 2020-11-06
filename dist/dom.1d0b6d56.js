@@ -118,14 +118,6 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"dom.js":[function(require,module,exports) {
-/*
- * @Author: your name
- * @Date: 2020-11-05 09:42:27
- * @LastEditTime: 2020-11-05 16:42:02
- * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
- * @FilePath: /dom-1/src/dom.js
- */
 window.dom = {
   create: function create(string) {
     var container = document.createElement("template");
@@ -142,7 +134,7 @@ window.dom = {
   append: function append(parent, node) {
     parent.appendChild(node);
   },
-  //加爸爸 把 node 放在爸爸前 在把 node 放在 parent 下面
+  //加爸爸 把node插入在parent前 再 node 下面加入 parent
   wrap: function wrap(node, parent) {
     dom.before(node, parent);
     dom.append(parent, node);
@@ -176,13 +168,13 @@ window.dom = {
   },
   text: function text(node, string) {
     //适配
-    if (arguments === 2) {
+    if (arguments.length === 2) {
       if ("innerText" in node) {
         node.innerText = string; //ie
       } else {
         node.textContent = string; // firefox / Chrome
       }
-    } else if (arguments === 3) {
+    } else if (arguments.length === 1) {
       if ("innerText" in node) {
         return node.innerText;
       } else {
@@ -310,7 +302,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51024" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51934" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

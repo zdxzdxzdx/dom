@@ -118,14 +118,6 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"main.js":[function(require,module,exports) {
-/*
- * @Author: your name
- * @Date: 2020-11-05 09:38:35
- * @LastEditTime: 2020-11-05 16:40:53
- * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
- * @FilePath: /dom-1/src/main.js
- */
 //document.createElement('div')
 var div = dom.create("<div>newDiv</div>");
 console.log(div);
@@ -133,6 +125,7 @@ dom.after(test, div);
 var div3 = dom.create('<div id="parent"></div>');
 dom.wrap(test, div3);
 var nodes = dom.empty(window.empty);
+console.log("删除------------");
 console.log(nodes);
 dom.attr(test, "title", "this is title"); //三个参数实现写
 
@@ -168,6 +161,8 @@ console.log(dom.siblings(dom.find("#s2")[0]));
 console.log(dom.next(s2));
 console.log(dom.previous(s2));
 var t = dom.find("#travel")[0];
+console.log("---------");
+console.log(t);
 dom.each(dom.children(t), function (n) {
   return dom.style(n, "color", "red");
 });
@@ -200,7 +195,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51024" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51934" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -14,7 +14,7 @@ window.dom = {
   append(parent, node) {
     parent.appendChild(node);
   },
-  //加爸爸 把 node 放在爸爸前 在把 node 放在 parent 下面
+  //加爸爸 把node插入在parent前 再 node 下面加入 parent
   wrap(node, parent) {
     dom.before(node, parent);
     dom.append(parent, node);
@@ -46,13 +46,13 @@ window.dom = {
   },
   text(node, string) {
     //适配
-    if (arguments === 2) {
+    if (arguments.length === 2) {
       if ("innerText" in node) {
         node.innerText = string; //ie
       } else {
         node.textContent = string; // firefox / Chrome
       }
-    } else if (arguments === 3) {
+    } else if (arguments.length === 1) {
       if ("innerText" in node) {
         return node.innerText;
       } else {
